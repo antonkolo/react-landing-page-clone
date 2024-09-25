@@ -120,7 +120,7 @@ main p {
   &::before {
     content: '';
     height: 3px;
-    width: 90%;
+    width: 800px;
     background: url('../public/assets/pattern.png');
     background-position: bottom;
     transform: rotate(-1deg);
@@ -138,12 +138,14 @@ main p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .feature {
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 900px;
   img {
     max-width: 400px;
   }
