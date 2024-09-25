@@ -1,0 +1,170 @@
+@import './index.module.css';
+
+/* general styles */
+body {
+  font-family: 'Noto Sans JP Variable', sans-serif;
+  background-color: var(--primary-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'PT Serif Caption', serif;
+}
+
+/* header */
+.announcement {
+  background-color: var(--secondary-color);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 0.4rem;
+  font-weight: 500;
+}
+
+.header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+
+  li {
+    list-style: none;
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  .logo {
+    max-width: 2.25rem;
+  }
+
+  .logo-text {
+    max-width: 8.5rem;
+  }
+}
+
+/* main */
+
+main p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin-top: 1.75rem;
+  line-height: var(--line-height);
+}
+
+/* hero section */
+.section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section {
+  composes: section;
+  max-width: 650px;
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+}
+
+.inside-wrapper {
+  max-width: 600px;
+}
+
+.play-button {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  background-color: var(--primary-color);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  opacity: 0.8;
+  margin-top: 3.5rem;
+
+  svg {
+    max-width: 35px;
+  }
+}
+
+.features-section {
+  composes: section;
+  position: relative;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    height: 3px;
+    width: 90%;
+    background: url('../public/assets/pattern.png');
+    background-position: bottom;
+    transform: rotate(-1deg);
+    display: block;
+    position: absolute;
+  }
+
+  p {
+    margin-top: 1.75rem;
+  }
+}
+
+.features-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    max-width: 400px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  p {
+    max-width: 55ch;
+  }
+}
